@@ -3,12 +3,39 @@ from django.core.validators import MinValueValidator
 
 # Create your models here.
 
+class Race(models.Model):
+    """
+    Representa las distintas razas de las especies que maneja el refugio.
+    Permite al administrador crear dinámicamente opciones como 'Labrador', 'Calico', 'Monitor', etc.
+    """
+    name = models.CharField(max_length=50, unique=True, verbose_name="Nombre de la Raza")
+
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        verbose_name = "Raza"
+        verbose_name_plural = "Razas"
+        ordering = ['name']
+
+    def __str__(self):
+        return self.name
+
+
 class Species(models.Model):
     """
     Representa las distintas especies de animales que maneja el refugio.
     Permite al administrador crear dinámicamente opciones como 'Perro', 'Gato', 'Hurón', etc.
     """
     name = models.CharField(max_length=50, unique=True, verbose_name="Nombre de la Especie")
+
+    race = models.ForeignKey(
+        Race,
+        on_delete=models.CASCADE,
+        related_name='species',
+        verbose_name="Raza"
+    )
+
+    created_at = models.DateTimeField(auto_now_add=True)
 
     class Meta:
         verbose_name = "Especie"
