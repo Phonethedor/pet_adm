@@ -5,6 +5,7 @@ Monolito Django
 ## Tecnologias
 - Django
 - PostgreSQL
-- psycopg2-binary
-- django-environ
-- pillow
+- Psycopg2-binary
+- Django-environ
+- Pillow
+- Bcrypt
