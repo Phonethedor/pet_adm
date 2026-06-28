@@ -1,1 +1,9 @@
 .env
+Pet_adm/__pycache__
+shelter/__pycache__
+users/__pycache__
+shelter/migrations
+users/migrations
+media/
+*.pyc
+__pycache__/
