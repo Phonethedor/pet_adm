@@ -1,5 +1,12 @@
 from django.urls import path
-from .api_views import SignUpAPIView, LoginAPIView, LogoutAPIView, UserProfileAPIView, RoleListAPIView, UserListAPIView
+from .api_views import (
+    SignUpAPIView, 
+    LoginAPIView, 
+    LogoutAPIView, 
+    UserProfileAPIView, 
+    RoleListAPIView, 
+    UserListAPIView
+)
 
 urlpatterns = [
     path('signup/', SignUpAPIView.as_view(), name='api_signup'),

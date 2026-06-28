@@ -12,6 +12,7 @@ class SignUpAPIView(View):
     """
     Endpoint REST para registrar un nuevo adoptante
     """
+    
     def post(self, request, *args, **kwargs):
         try:
             data = json.loads(request.body)
